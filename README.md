@@ -1,10 +1,6 @@
 # CrowdStrike NGSIEM / Fusion backup (unofficial)
 
-**Export NGSIEM correlation rules, Falcon Fusion SOAR workflow definitions, NGSIEM lookups, and custom parser definitions to dated folders on disk** using the public Falcon APIs (via [FalconPy](https://github.com/CrowdStrike/falconpy)). Optional zip + manifest publish to a mounted share.
-
-**Repository:** [github.com/1B05H1N/crowdstrike-ngsiem-fusion-backup](https://github.com/1B05H1N/crowdstrike-ngsiem-fusion-backup). This tree ships **without** a `.git` directory (no prior history). To publish: create the empty repo on GitHub, then locally run `git init -b main`, `git add -A`, `git commit -m "Initial commit"`, `git remote add origin …`, and `git push -u origin main`.
-
-This is the **grown-up successor** to the author's earlier public project [**crowdstrike-ngsiem-correlation-rules-backup**](https://github.com/1B05H1N/crowdstrike-ngsiem-correlation-rules-backup) (correlation rules only). [Background and lineage](#background-and-lineage) explains scope and why this tool exists alongside CrowdStrike's own product improvements.
+**Export NGSIEM correlation rules, Falcon Fusion SOAR workflow definitions, NGSIEM lookups, and custom parser definitions to dated folders on disk** using the public Falcon APIs (via [FalconPy](https://github.com/CrowdStrike/falconpy)). Optional zip + manifest publish to a mounted share. This is the **grown-up successor** to the author's earlier public project [**crowdstrike-ngsiem-correlation-rules-backup**](https://github.com/1B05H1N/crowdstrike-ngsiem-correlation-rules-backup) (correlation rules only). [Background and lineage](#background-and-lineage) explains scope and why this tool exists alongside CrowdStrike's own product improvements.
 
 ### No affiliation, endorsement, or implied use
 

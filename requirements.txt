@@ -1,0 +1,13 @@
+# Pinned for reproducible installs; bump after testing. Run: pip install -r requirements.txt
+crowdstrike-falconpy==1.6.1
+click==8.3.1
+rich==14.3.3
+python-dotenv==1.2.1
+requests==2.33.1
+urllib3==2.6.3
+certifi==2026.2.25
+charset-normalizer==3.4.4
+idna==3.11
+markdown-it-py==4.0.0
+mdurl==0.1.2
+Pygments==2.20.0

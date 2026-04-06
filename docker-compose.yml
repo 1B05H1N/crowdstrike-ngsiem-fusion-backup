@@ -1,0 +1,72 @@
+# Compose profiles: backup (full run), setup (cli setup), status (cli status).
+# Host paths: ./backups and ./logs map to in-container defaults used by cli.py.
+# For remote zip publish, mount a share and set BACKUP_REMOTE_DIR to the in-container path.
+version: '3.8'
+
+services:
+  crowdstrike-backup:
+    build: .
+    container_name: crowdstrike-backup-tool
+    volumes:
+      # cli.py default output_dir is backups/ (correlation rules + Fusion workflows subdirs)
+      - ./backups:/app/backups
+      - ./correlation_rules_backups:/app/correlation_rules_backups
+      # Mount logs directory
+      - ./logs:/app/logs
+      # Mount .env file for configuration
+      - ./.env:/app/.env:ro
+    environment:
+      # Environment variables can be set here or in .env file
+      - FALCON_CLIENT_ID=${FALCON_CLIENT_ID}
+      - FALCON_CLIENT_SECRET=${FALCON_CLIENT_SECRET}
+      - FALCON_CLOUDREGION=${FALCON_CLOUDREGION:-us-2}
+      - BACKUP_FILTER=${BACKUP_FILTER:-*}
+    restart: unless-stopped
+    profiles:
+      - backup
+      - setup
+      - status
+
+  # Service for running setup
+  setup:
+    build: .
+    container_name: crowdstrike-backup-setup
+    volumes:
+      - ./.env:/app/.env
+    profiles:
+      - setup
+    command: ["setup"]
+
+  # Service for checking status
+  status:
+    build: .
+    container_name: crowdstrike-backup-status
+    volumes:
+      - ./.env:/app/.env:ro
+    profiles:
+      - status
+    command: ["status"]
+
+  # Correlation rules + Fusion workflows + NGSIEM lookups (no Fusion activities/triggers/executions catalog)
+  backup:
+    build: .
+    container_name: crowdstrike-backup-run
+    volumes:
+      - ./backups:/app/backups
+      - ./correlation_rules_backups:/app/correlation_rules_backups
+      - ./logs:/app/logs
+      - ./.env:/app/.env:ro
+      # Optional: mount host path and set BACKUP_REMOTE_DIR to same path inside container for zip + audit copy (filesystem only, not HTTP)
+      # - /mnt/your-share:/mnt/remote-backup
+    environment:
+      - FALCON_CLIENT_ID=${FALCON_CLIENT_ID}
+      - FALCON_CLIENT_SECRET=${FALCON_CLIENT_SECRET}
+      - FALCON_CLOUDREGION=${FALCON_CLOUDREGION:-us-2}
+      - BACKUP_FILTER=${BACKUP_FILTER:-*}
+      - BACKUP_REMOTE_DIR=${BACKUP_REMOTE_DIR:-}
+      - OUTPUT_SHARE=${OUTPUT_SHARE:-}
+      - BACKUP_REMOTE_SUBDIR=${BACKUP_REMOTE_SUBDIR:-crowdstrike-backup}
+      - BACKUP_REMOTE_MAX_ARCHIVES=${BACKUP_REMOTE_MAX_ARCHIVES:-30}
+    profiles:
+      - backup
+    command: ["all", "--no-fusion-catalog"]

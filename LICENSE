@@ -1,0 +1,44 @@
+Copyright (c) 2025-2026 Ibrahim Al-Shinnawi
+
+All rights reserved.
+
+TERMS AND CONDITIONS
+
+1. Attribution
+   You must retain the above copyright notice and this list of conditions in
+   all copies or substantial portions of this software and its documentation.
+   You must give clear credit to Ibrahim Al-Shinnawi as the author in any public
+   distribution, fork, or derivative (for example in a README, NOTICE file, or
+   user-visible credits).
+
+2. Non-commercial use only
+   You may use, copy, modify, and share this software only for non-commercial
+   purposes. "Non-commercial" means use not primarily intended for or directed
+   toward commercial advantage or monetary compensation (including use by
+   for-profit entities in connection with paid products or services).
+   Any commercial use requires prior written permission from the copyright
+   holder.
+
+3. No warranty
+   THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. YOU USE THIS SOFTWARE
+   ENTIRELY AT YOUR OWN RISK. THE COPYRIGHT HOLDER DOES NOT WARRANT THAT THE
+   SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT OPERATION WILL BE UNINTERRUPTED
+   OR ERROR-FREE.
+
+4. Limitation of liability
+   IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT, INDIRECT,
+   INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT
+   LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+   OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+5. Third parties
+   This software interacts with CrowdStrike Falcon and other services. Those
+   services have their own terms; this license does not grant any rights under
+   CrowdStrike or other vendors.
+
+For commercial licensing inquiries: 1B05H1N@pm.me

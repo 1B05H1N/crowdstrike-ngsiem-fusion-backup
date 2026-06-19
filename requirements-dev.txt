@@ -1,4 +1,4 @@
 # Optional: pip install -r requirements-dev.txt && make audit && make lint-security
 -r requirements.txt
 pip-audit>=2.7.0
-bandit[toml]>=1.7.10
+bandit[toml]>=1.9.4
